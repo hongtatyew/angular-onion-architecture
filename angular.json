@@ -1,0 +1,154 @@
+{
+  "version": 1,
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "my-hero-academia",
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
+  "projects": {
+    "my-hero-academia": {
+      "projectType": "application",
+      "root": "apps/my-hero-academia",
+      "sourceRoot": "apps/my-hero-academia/src",
+      "prefix": "my-hero-academia",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/my-hero-academia",
+            "index": "apps/my-hero-academia/src/index.html",
+            "main": "apps/my-hero-academia/src/main.ts",
+            "polyfills": "apps/my-hero-academia/src/polyfills.ts",
+            "tsConfig": "apps/my-hero-academia/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/my-hero-academia/src/favicon.ico",
+              "apps/my-hero-academia/src/assets"
+            ],
+            "styles": ["apps/my-hero-academia/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/my-hero-academia/src/environments/environment.ts",
+                  "with": "apps/my-hero-academia/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "my-hero-academia:build:production"
+            },
+            "development": {
+              "browserTarget": "my-hero-academia:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "my-hero-academia:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/my-hero-academia/src/**/*.ts",
+              "apps/my-hero-academia/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/my-hero-academia"],
+          "options": {
+            "jestConfig": "apps/my-hero-academia/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "my-hero-academia-e2e": {
+      "root": "apps/my-hero-academia-e2e",
+      "sourceRoot": "apps/my-hero-academia-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/my-hero-academia-e2e/cypress.json",
+            "tsConfig": "apps/my-hero-academia-e2e/tsconfig.e2e.json",
+            "devServerTarget": "my-hero-academia:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "my-hero-academia:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/my-hero-academia-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  }
+}
