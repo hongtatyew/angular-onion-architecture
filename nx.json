@@ -25,6 +25,27 @@
     "my-hero-academia-e2e": {
       "tags": [],
       "implicitDependencies": ["my-hero-academia"]
+    },
+    "domain-hero": {
+      "tags": ["scope:domain", "type:feature"]
+    },
+    "repository-hero": {
+      "tags": ["scope:repository", "type:feature"]
+    },
+    "application-hero": {
+      "tags": ["scope:application", "type:feature"]
+    },
+    "infrastructure-hero": {
+      "tags": ["scope:infrastructure", "type:feature"]
+    },
+    "presentation-hero": {
+      "tags": ["scope:presentation", "type:feature"]
+    },
+    "shared-pipes-truncate": {
+      "tags": ["scope:shared", "type:pipe"]
+    },
+    "shared-pipes-to-string": {
+      "tags": ["scope:shared", "type:pipe"]
     }
   }
 }

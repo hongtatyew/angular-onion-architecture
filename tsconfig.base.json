@@ -14,7 +14,30 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@my-hero-academia/heroes-store": [
+        "libs/ngrx-stores/heroes/src/index.ts"
+      ],
+      "@my-hero-academia/domain/hero": ["libs/domain/hero/src/index.ts"],
+      "@my-hero-academia/repository/hero": [
+        "libs/repository/hero/src/index.ts"
+      ],
+      "@my-hero-academia/application/hero": [
+        "libs/application/hero/src/index.ts"
+      ],
+      "@my-hero-academia/infrastructure/hero": [
+        "libs/infrastructure/hero/src/index.ts"
+      ],
+      "@my-hero-academia/presentation/hero": [
+        "libs/presentation/hero/src/index.ts"
+      ],
+      "@my-hero-academia/shared/pipes/truncate": [
+        "libs/shared/pipes/truncate/src/index.ts"
+      ],
+      "@my-hero-academia/shared/pipes/to-string": [
+        "libs/shared/pipes/to-string/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

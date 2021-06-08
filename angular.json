@@ -19,13 +19,13 @@
     "@nrwl/angular:application": {
       "style": "scss",
       "linter": "eslint",
-      "unitTestRunner": "jest",
+      "unitTestRunner": "karma",
       "e2eTestRunner": "cypress"
     },
     "@nrwl/angular:library": {
       "style": "scss",
       "linter": "eslint",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "karma"
     },
     "@nrwl/angular:component": {
       "style": "scss"
@@ -51,7 +51,10 @@
               "apps/my-hero-academia/src/favicon.ico",
               "apps/my-hero-academia/src/assets"
             ],
-            "styles": ["apps/my-hero-academia/src/styles.scss"],
+            "styles": [
+              "apps/my-hero-academia/src/styles.scss",
+              "node_modules/bootstrap/scss/bootstrap.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -146,6 +149,286 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/my-hero-academia-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "domain-hero": {
+      "projectType": "library",
+      "root": "libs/domain/hero",
+      "sourceRoot": "libs/domain/hero/src",
+      "prefix": "my-hero-academia",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "project": "libs/domain/hero/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/domain/hero/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/domain/hero/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/domain/hero/src/test.ts",
+            "tsConfig": "libs/domain/hero/tsconfig.spec.json",
+            "karmaConfig": "libs/domain/hero/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/domain/hero/src/**/*.ts",
+              "libs/domain/hero/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "repository-hero": {
+      "projectType": "library",
+      "root": "libs/repository/hero",
+      "sourceRoot": "libs/repository/hero/src",
+      "prefix": "my-hero-academia",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "project": "libs/repository/hero/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/repository/hero/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/repository/hero/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/repository/hero/src/test.ts",
+            "tsConfig": "libs/repository/hero/tsconfig.spec.json",
+            "karmaConfig": "libs/repository/hero/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/repository/hero/src/**/*.ts",
+              "libs/repository/hero/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "application-hero": {
+      "projectType": "library",
+      "root": "libs/application/hero",
+      "sourceRoot": "libs/application/hero/src",
+      "prefix": "my-hero-academia",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "project": "libs/application/hero/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/application/hero/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/application/hero/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/application/hero/src/test.ts",
+            "tsConfig": "libs/application/hero/tsconfig.spec.json",
+            "karmaConfig": "libs/application/hero/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/application/hero/src/**/*.ts",
+              "libs/application/hero/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "infrastructure-hero": {
+      "projectType": "library",
+      "root": "libs/infrastructure/hero",
+      "sourceRoot": "libs/infrastructure/hero/src",
+      "prefix": "my-hero-academia",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "project": "libs/infrastructure/hero/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/infrastructure/hero/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/infrastructure/hero/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/infrastructure/hero/src/test.ts",
+            "tsConfig": "libs/infrastructure/hero/tsconfig.spec.json",
+            "karmaConfig": "libs/infrastructure/hero/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/infrastructure/hero/src/**/*.ts",
+              "libs/infrastructure/hero/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "presentation-hero": {
+      "projectType": "library",
+      "root": "libs/presentation/hero",
+      "sourceRoot": "libs/presentation/hero/src",
+      "prefix": "my-hero-academia",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "project": "libs/presentation/hero/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/presentation/hero/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/presentation/hero/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/presentation/hero/src/test.ts",
+            "tsConfig": "libs/presentation/hero/tsconfig.spec.json",
+            "karmaConfig": "libs/presentation/hero/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/presentation/hero/src/**/*.ts",
+              "libs/presentation/hero/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "shared-pipes-truncate": {
+      "projectType": "library",
+      "root": "libs/shared/pipes/truncate",
+      "sourceRoot": "libs/shared/pipes/truncate/src",
+      "prefix": "my-hero-academia",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "project": "libs/shared/pipes/truncate/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/shared/pipes/truncate/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/shared/pipes/truncate/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/shared/pipes/truncate/src/test.ts",
+            "tsConfig": "libs/shared/pipes/truncate/tsconfig.spec.json",
+            "karmaConfig": "libs/shared/pipes/truncate/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/pipes/truncate/src/**/*.ts",
+              "libs/shared/pipes/truncate/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "shared-pipes-to-string": {
+      "projectType": "library",
+      "root": "libs/shared/pipes/to-string",
+      "sourceRoot": "libs/shared/pipes/to-string/src",
+      "prefix": "my-hero-academia",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "project": "libs/shared/pipes/to-string/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/shared/pipes/to-string/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/shared/pipes/to-string/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/shared/pipes/to-string/src/test.ts",
+            "tsConfig": "libs/shared/pipes/to-string/tsconfig.spec.json",
+            "karmaConfig": "libs/shared/pipes/to-string/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/pipes/to-string/src/**/*.ts",
+              "libs/shared/pipes/to-string/src/**/*.html"
+            ]
           }
         }
       }

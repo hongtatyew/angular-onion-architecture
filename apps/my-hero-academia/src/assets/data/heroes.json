@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Izuku Midoriya",
+    "description": "Izuku Midoriya (緑みどり谷や出いず久く Midoriya Izuku?), also known as Deku (デク Deku?), is the main protagonist of the My Hero Academia manga and anime series.",
+    "academy": "U.A.",
+    "quirk": "One For All",
+    "superMoves": ["Detroit Smash", "Delaware Smash"],
+    "role": "Hero",
+    "profileImageUrl": "assets/images/heroes/izuku-midoriya.png"
+  },
+  {
+    "id": 2,
+    "name": "Katsuki Bakugo",
+    "description": "Katsuki Bakugo (爆ばく豪ごう勝かつ己き Bakugō Katsuki?), also known as Kacchan (かっちゃん Katchan?) by his childhood friends,[2] and his hero name Great Explosion Murder God Dynamight (大だい•爆ばく•殺さつ•神しんダイナマイト Daibakusatsu-Shin Dainamaito?),[3] is a student in Class 1-A at U.A. High School, training to become a Pro Hero.",
+    "academy": "U.A.",
+    "quirk": "Explosion",
+    "superMoves": ["Explosive Speed", "Stun Grenade"],
+    "role": "Hero",
+    "profileImageUrl": "assets/images/heroes/katsuki-bakugo.png"
+  },
+  {
+    "id": 3,
+    "name": "Shoto Todoroki",
+    "description": "Shoto Todoroki (轟とどろき焦しょう凍と Todoroki Shōto?), also known as Shoto (ショート Shōto?), is a student in Class 1-A at U.A. High School, where he got in through official recommendations[2] and is training to become a Pro Hero.",
+    "academy": "U.A.",
+    "quirk": "Half-Cold Half-Hot",
+    "superMoves": ["Heaven-Piercing Ice Wall", "Wall of Flames"],
+    "role": "Hero",
+    "profileImageUrl": "assets/images/heroes/shoto-todoroki.png"
+  },
+  {
+    "id": 4,
+    "name": "Ochaco Uraraka",
+    "description": "Ochaco Uraraka (麗うらら日かお茶ちゃ子こ Uraraka Ochako?), also known as Uravity (ウラビティ Urabiti?), is a student in Class 1-A at U.A. High School, training to become a Pro Hero.",
+    "academy": "U.A.",
+    "quirk": "Zero Gravity",
+    "superMoves": ["Skill Release", "Meteor Storm"],
+    "role": "Hero",
+    "profileImageUrl": "assets/images/heroes/ochaco-uraraka.png"
+  },
+  {
+    "id": 5,
+    "name": "Toshinori Yagi",
+    "description": "Toshinori Yagi (八や木ぎ俊とし典のり Yagi Toshinori?), more commonly known by his hero name, All Might (オールマイト Ōru Maito?), is the tritagonist of My Hero Academia, and the arc protagonist of the Hideout Raid Arc. All Might is the former No. 1 Pro Hero who bore the title of the world's Symbol of Peace (平和の象徴 Heiwa no Shōchō?).",
+    "academy": "U.A.",
+    "quirk": "One For All",
+    "superMoves": ["California Smash", "Carolina Smash"],
+    "role": "Hero",
+    "profileImageUrl": "assets/images/heroes/toshinori-yagi.png"
+  }
+]

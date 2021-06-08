@@ -1,0 +1,14 @@
+<div class="card mb-5" style="width: 18rem;">
+    <img class="card-img-top" [src]="hero.profileImageUrl" [alt]="hero.name">
+    <div>
+        <h5 class="card-title p-3">{{ hero.name }} <small><a href="">edit</a></small></h5>
+        <p class="card-text p-3">{{ hero.description | truncate: 100 }}</p>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>Academic</b>: {{ hero.academy }}</li>
+            <li class="list-group-item"><b>Role</b>: {{ hero.role }}</li>
+            <li class="list-group-item"><b>Quirk</b>: {{ hero.quirk }}</li>
+            <li class="list-group-item"><b>Super Moves</b>:</li>
+            <li class="list-group-item" *ngFor="let superMove of hero.superMoves">- {{ superMove }}</li>
+        </ul>
+    </div>
+</div>
