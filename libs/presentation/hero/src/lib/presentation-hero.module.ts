@@ -5,6 +5,7 @@ import { ApplicationHeroModule } from '@my-hero-academia/application/hero';
 import { HeroUiComponent } from './hero-ui/hero-ui.component';
 import { SharedPipesTruncateModule } from '@my-hero-academia/shared/pipes/truncate';
 import { SharedPipesToStringModule } from '@my-hero-academia/shared/pipes/to-string';
+import { PresentationHeroRoutingModule } from './presentation-hero-routing.module';
 
 @NgModule({
   imports: [
@@ -12,13 +13,11 @@ import { SharedPipesToStringModule } from '@my-hero-academia/shared/pipes/to-str
     ApplicationHeroModule,
     SharedPipesTruncateModule,
     SharedPipesToStringModule,
+    PresentationHeroRoutingModule
   ],
   declarations: [
     HeroListingContainerComponent,
     HeroUiComponent
-  ],
-  exports: [
-    HeroListingContainerComponent
   ]
 })
 export class PresentationHeroModule { }

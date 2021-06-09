@@ -8,6 +8,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { PresentationHeroModule } from '@my-hero-academia/presentation/hero';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +28,8 @@ import { PresentationHeroModule } from '@my-hero-academia/presentation/hero';
     ),
     EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    PresentationHeroModule
+    PresentationHeroModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],

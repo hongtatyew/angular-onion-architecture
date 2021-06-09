@@ -66,6 +66,8 @@ ng generate @nrwl/angular:library --name=hero --directory=application --enableIv
 ng generate @nrwl/angular:library --name=hero --directory=infrastructure --enableIvy --buildable --unitTestRunner=karma --tags=scope:infrastructure,type:feature 
 ng generate @nrwl/angular:library --name=hero --directory=presentation --enableIvy --buildable --unitTestRunner=karma --tags=scope:presentation,type:feature 
 
+ng generate @nrwl/angular:library --name=edit-hero --directory=presentation --enableIvy --buildable --unitTestRunner=karma --tags=scope:presentation,type:feature 
+
 ng generate @nrwl/angular:library --name=pipes/to-string --directory=shared --enableIvy --buildable --unitTestRunner=karma --tags=scope:shared,type:pipe 
 
 ## component

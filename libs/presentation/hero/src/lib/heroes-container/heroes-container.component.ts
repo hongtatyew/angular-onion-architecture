@@ -16,7 +16,7 @@ export class HeroListingContainerComponent {
   constructor(
     @Inject(HERO_SERVICE) private heroService: IHeroService
   ) {
-    this.heroes$ = heroService.allHero$;
-    heroService.init();
+    this.heroes$ = this.heroService.getAllHero();
+    this.heroService.loadHeroes();
   }
 }

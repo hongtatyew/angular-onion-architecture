@@ -1,2 +1,2 @@
-export * from './lib/hero.aggregate';
+export * from './lib/hero.model';
 export * from './lib/hero-role.enum';

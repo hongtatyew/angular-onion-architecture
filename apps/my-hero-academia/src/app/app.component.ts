@@ -8,7 +8,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-  title = 'my-hero-academia';
+  title = 'my hero academia';
 
 
 }
